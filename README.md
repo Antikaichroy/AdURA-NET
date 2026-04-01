@@ -196,7 +196,15 @@ The ensemble averages logits from DenseNet-121, DenseNet-161, and DenseNet-201 f
 <div align="center">
   <img src="architecture_design/adaptive_densenet_extended_modified.jpg" alt="AdURA-NET Architecture" width="90%"/>
   <br/>
-  <em>Figure 1: Overview of the TRACE architecture. Stage I fine-tunes LaBSE into a frozen root-aware teacher (DBERT-pt). Stage II disentangles a Whisper Large v3 encoder into a Semantic Branch (Z_sem) and Style Branch (Z_style) via a Push-Pull mechanism, with a Triple Autoencoder ensuring no information is lost. Z_sem is the final phylogenetically aligned output at inference.</em>
+  <em>Figure 1: Overview of the proposed AdURA-Net architecture. The Adaptive Deformable Convolution
+Block enhances early geometric feature extraction. DenseNet-121 serves as the backbone for
+hierarchical feature propagation. A dual-head prediction module produces (1) class probabilities
+via a sigmoid classifier, and (2) Dirichlet Evidence (𝑒𝑖 ) for uncertainty quantification. The network
+is trained jointly using BCE (masked) loss, Dirichlet evidential loss, offset loss, and orthogonal
+regularization. During inference, the BCE head outputs the raw prediction, and the Dirichlet
+head outputs evidence that is used for uncertainty calculations. The abstention gate checks the
+uncertainty values (𝑢𝑖 ). If it is greater than the threshold (𝜏 = 0.4), then it replaces it with (−1);
+otherwise, it is retained.</em>
 </div>
 
 ### Loss Function
