@@ -198,6 +198,7 @@ The ensemble averages logits from DenseNet-121, DenseNet-161, and DenseNet-201 f
 </p>
 
 **Overview of the proposed AdURA-Net architecture.**  
+
 The Adaptive Deformable Convolution Block enhances early geometric feature extraction. DenseNet-121 serves as the backbone for hierarchical feature propagation. A dual-head prediction module produces:
 
 1. Class probabilities via a sigmoid classifier  
