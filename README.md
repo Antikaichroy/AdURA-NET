@@ -226,6 +226,7 @@ During inference:
 
 The abstention gate checks uncertainty values $u_i$.  
 If $u_i > \tau$ (where $\tau = 0.4$), the prediction is replaced with $-1$; otherwise, it is retained.
+---
 
 <p align="center">
   <img src="architecture_design/loss_block_extended_modified.jpg" width="90%"/>
