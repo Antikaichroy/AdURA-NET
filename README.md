@@ -2,7 +2,7 @@
 
 > **AdURA-Net** is a geometry-driven, adaptive uncertainty-aware framework for reliable thoracic disease classification from chest X-rays. It combines adaptive deformable convolutions with a DenseNet backbone and a dual-head loss (masked BCE + Dirichlet evidential learning) to enable principled three-way prediction: **positive**, **negative**, or **uncertain**.
 
-[Paper (PDF)](./AURA_net.pdf) | Dataset: [CheXpert-Small](https://stanfordmlgroup.github.io/competitions/chexpert/)
+[Paper (PDF)](https://arxiv.org/abs/2603.00201) | Dataset: [CheXpert-Small](https://stanfordmlgroup.github.io/competitions/chexpert/)
 
 ---
 
@@ -98,7 +98,7 @@ print(torch.cuda.get_device_name(0))
 
 ```bash
 # Register and download from:
-# https://stanfordmlgroup.github.io/competitions/chexpert/
+# https://www.kaggle.com/datasets/ashery/chexpert
 # Then place files as:
 data/
 └── CheXpert-v1.0-small/
