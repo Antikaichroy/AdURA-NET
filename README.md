@@ -193,13 +193,24 @@ The ensemble averages logits from DenseNet-121, DenseNet-161, and DenseNet-201 f
 
 ## Model Architecture Overview
 
-<div align="center">
-  <img src="architecture_design/adaptive_densenet_extended_modified.jpg" alt="AdURA-NET Architecture" width="90%"/>
-  <br/>
-  <em>Overview of the proposed AdURA-Net architecture. 
-        The Adaptive Deformable Convolution Block enhances early geometric feature extraction. DenseNet-121 serves as the backbone for hierarchical feature propagation. A dual-head prediction module produces (1) class probabilities via a sigmoid classifier, and (2) Dirichlet Evidence $(e_i)$ for uncertainty quantification. The network is trained jointly using BCE (masked) loss, Dirichlet evidential loss, offset loss, and orthogonal regularization. During inference, the BCE head outputs the raw prediction, and the Dirichlet head outputs evidence that is used for uncertainty calculations. The abstention gate checks the uncertainty values $(u_i)$. If it is greater than the threshold $(\tau = 0.4)$, then it replaces it with $(-1)$; otherwise, it is retained.</em>
-</div>
+<p align="center">
+  <img src="architecture_design/adaptive_densenet_extended_modified.jpg" width="90%"/>
+</p>
 
+**Overview of the proposed AdURA-Net architecture.**  
+The Adaptive Deformable Convolution Block enhances early geometric feature extraction. DenseNet-121 serves as the backbone for hierarchical feature propagation. A dual-head prediction module produces:
+
+1. Class probabilities via a sigmoid classifier  
+2. Dirichlet Evidence $e_i$ for uncertainty quantification  
+
+The network is trained jointly using BCE (masked) loss, Dirichlet evidential loss, offset loss, and orthogonal regularization.
+
+During inference:
+- The BCE head outputs the raw prediction  
+- The Dirichlet head outputs evidence used for uncertainty calculations  
+
+The abstention gate checks uncertainty values $u_i$.  
+If $u_i > \tau$ (where $\tau = 0.4$), the prediction is replaced with $-1$; otherwise, it is retained.
 ### Loss Function
 
 ```
