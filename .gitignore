@@ -1,0 +1,6 @@
+.env
+trained_models/
+logs/
+*.ipynb
+__pycache__
+*.pth
