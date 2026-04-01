@@ -2,11 +2,11 @@
 
 > **AdURA-Net** is a geometry-driven, adaptive uncertainty-aware framework for reliable thoracic disease classification from chest X-rays. It combines adaptive deformable convolutions with a DenseNet backbone and a dual-head loss (masked BCE + Dirichlet evidential learning) to enable principled three-way prediction: **positive**, **negative**, or **uncertain**.
 
-📄 [Paper (PDF)](./AURA_net.pdf) | 🏥 Dataset: [CheXpert-Small](https://stanfordmlgroup.github.io/competitions/chexpert/)
+[Paper (PDF)](./AURA_net.pdf) | Dataset: [CheXpert-Small](https://stanfordmlgroup.github.io/competitions/chexpert/)
 
 ---
 
-## ✨ Key Features
+## Key Features
 
 - **Adaptive Deformable Convolution Block** — geometry-aware early feature refinement capturing anatomical structures
 - **Dual-Head Prediction** — simultaneous BCE classification head and Dirichlet evidential uncertainty head
@@ -16,7 +16,7 @@
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 AdURA-NET/
@@ -42,7 +42,7 @@ AdURA-NET/
 
 ---
 
-## 🛠️ Environment Setup
+## Environment Setup
 
 ### Requirements
 
@@ -86,7 +86,7 @@ print(torch.cuda.get_device_name(0))
 
 ---
 
-## 📦 Dataset
+## Dataset
 
 **CheXpert-Small** — Stanford ML Group
 
@@ -119,7 +119,7 @@ data/
 
 ---
 
-## 🚀 Training
+## Training
 
 ### 5-Disease Classification (U-One, DenseNet-121)
 
@@ -158,7 +158,7 @@ python adcb_dense_u_one_201.py   # DenseNet-201
 
 ---
 
-## 📊 Results
+## Results
 
 ### 5-Disease Task (Cardiomegaly, Edema, Consolidation, Atelectasis, Pleural Effusion)
 
@@ -181,7 +181,7 @@ python adcb_dense_u_one_201.py   # DenseNet-201
 
 ---
 
-## 🧪 Ensemble Inference (13-Disease)
+## Ensemble Inference (13-Disease)
 
 ```bash
 jupyter notebook ensemble_14.ipynb
@@ -191,7 +191,7 @@ The ensemble averages logits from DenseNet-121, DenseNet-161, and DenseNet-201 f
 
 ---
 
-## 🧠 Model Architecture Overview
+## Model Architecture Overview
 
 ```
 Input (320×320×3)
@@ -240,7 +240,7 @@ L = L_BCE + λ_Dir · L_Dir + L_offset + λ_orth · L_orth
 
 ---
 
-## 📝 Citation
+## Citation
 
 If you use this work, please cite:
 
@@ -255,7 +255,7 @@ If you use this work, please cite:
 
 ---
 
-## 📬 Contact
+## Contact
 
 - **Antik Aich Roy** — antikaichroy_t@isical.ac.in
 - **Ujjwal Bhattacharya** — ujjwal@isical.ac.in
