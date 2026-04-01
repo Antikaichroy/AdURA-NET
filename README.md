@@ -227,6 +227,12 @@ During inference:
 The abstention gate checks uncertainty values $u_i$.  
 If $u_i > \tau$ (where $\tau = 0.4$), the prediction is replaced with $-1$; otherwise, it is retained.
 
+<p align="center">
+  <img src="architecture_design/adaptive_densenet_extended_modified.jpg" width="90%"/>
+</p>
+
+The final feature representation is processed by two parallel heads. The BCE classification head produces class-wise logits and is optimized using masked binary cross-entropy, where uncertain labels ($-1$) are masked. In parallel, the Dirichlet evidence head estimates class-wise positive and negative evidence for each disease. These evidences are supervised using an uncertainty-aware evidential loss. Both heads are jointly optimized through a combined uncertainty-based training objective. Here, $B$ denotes the batch size, and $D_0, \ldots, D_N$ represent the disease classes, each associated with positive ($D_i^{+}$) and negative ($D_i^{-}$) evidence.
+
 ### Loss Function
 
 ```
