@@ -193,37 +193,7 @@ The ensemble averages logits from DenseNet-121, DenseNet-161, and DenseNet-201 f
 
 ## Model Architecture Overview
 
-```
-Input (320×320×3)
-    │
-    ▼
-Convolution
-    │
-    ▼
-Adaptive Deformable Convolution Block  ← geometry-aware spatial feature refinement
-    │
-    ▼
-DenseNet-121 Backbone (Dense Blocks 1–4)
-    │
-    ▼
-Global Average Pooling  →  [B, 1024]
-    │
-    ├──────────────────────────────────────┐
-    ▼                                      ▼
-BCE Classification Head           Dirichlet Evidence Head
-(Masked on uncertain=-1)          (estimates α+, α− per class)
-    │                                      │
-    ▼                                      ▼
-Raw Logits → Sigmoid               Evidence → Uncertainty Score
-                                       u = 2 / (α+ + α−)
-                                              │
-                                       Abstention Gate
-                                       (u > τ=0.4 → output −1)
-    │                                      │
-    └──────────────────┬───────────────────┘
-                       ▼
-                Final Prediction  {0, 1, −1}
-```
+![AdURA-Net Architecture]("AdURA-NET/Adaptive_Deformable_Densenet121/architecture_design/adaptive_densenet_extended_modified.jpg")
 
 ### Loss Function
 
