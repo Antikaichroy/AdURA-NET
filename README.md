@@ -9,15 +9,14 @@
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue?style=flat-square&logo=python)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-orange?style=flat-square&logo=pytorch)](https://pytorch.org/)
-[![HuggingFace](https://img.shields.io/badge/HuggingFace-Datasets-yellow?style=flat-square&logo=huggingface)](https://huggingface.co/)
+[![Kaggle](https://img.shields.io/badge/Kaggle-Dataset-blue?style=flat-square&logo=kaggle)](https://stanfordmlgroup.github.io/competitions/chexpert/)
+[![arXiv](https://img.shields.io/badge/arXiv-Paper-red?style=flat-square&logo=arxiv)](https://arxiv.org/abs/2603.00201)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
 </div>
 
+
 > **AdURA-Net** is a geometry-driven, adaptive uncertainty-aware framework for reliable thoracic disease classification from chest X-rays. It combines adaptive deformable convolutions with a DenseNet backbone and a dual-head loss (masked BCE + Dirichlet evidential learning) to enable principled three-way prediction: **positive**, **negative**, or **uncertain**.
-
-[Paper (PDF)](https://arxiv.org/abs/2603.00201) | Dataset: [CheXpert-Small](https://stanfordmlgroup.github.io/competitions/chexpert/)
-
 ---
 
 ## Key Features
