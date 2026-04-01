@@ -194,7 +194,7 @@ The ensemble averages logits from DenseNet-121, DenseNet-161, and DenseNet-201 f
 ## Model Architecture Overview
 
 <div align="center">
-  <img src="AdURA-NET/Adaptive_Deformable_Densenet121/architecture_design/adaptive_densenet_extended_modified.jpg" alt="AdURA-NET Architecture" width="90%"/>
+  <img src="architecture_design/adaptive_densenet_extended_modified.jpg" alt="AdURA-NET Architecture" width="90%"/>
   <br/>
   <em>Figure 1: Overview of the TRACE architecture. Stage I fine-tunes LaBSE into a frozen root-aware teacher (DBERT-pt). Stage II disentangles a Whisper Large v3 encoder into a Semantic Branch (Z_sem) and Style Branch (Z_style) via a Push-Pull mechanism, with a Triple Autoencoder ensuring no information is lost. Z_sem is the final phylogenetically aligned output at inference.</em>
 </div>
